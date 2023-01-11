@@ -1,0 +1,118 @@
+/*==================================================
+   TOC:
+   a. General Styles 
+   b. Typography
+   c. Row / Column Distribution
+   d. Iframe
+   e. Lists
+/*==================================================*/
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	overflow-y: inherit;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(152, 229, 203);
+}
+
+/* ------------------------------------------------------------------ */
+/* b. Typography
+/* ------------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* c. Row / Column Distribution
+/* ------------------------------------------------------------------ */
+.row {
+	width: 94%;
+	max-width: 1140px;
+	margin: 0 auto;
+	display: table;
+}
+
+[class*="col-"] {
+	float: left;
+	padding: 0 20px;
+}
+.col-one {
+	width: 10%;
+}
+.col-two {
+	width: 20%;
+}
+.col-three {
+	width: 25%;
+}
+.col-four {
+	width: 33%;
+}
+.col-five {
+	width: 40%;
+}
+.col-six {
+	width: 50%;
+}
+.col-seven {
+	width: 60%;
+}
+.col-eight {
+	width: 75%;
+}
+.col-nine {
+	width: 80%;
+}
+.col-ten {
+	width: 100%;
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Iframe
+/* ------------------------------------------------------------------ */
+iframe {
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: auto;
+	height: auto;
+	border-radius: 25px;
+}
+
+/* ------------------------------------------------------------------ */
+/* e. Lists
+/* ------------------------------------------------------------------ */
+ul {
+	list-style: none;
+	margin-left: 20px;
+	margin-right: 20px;
+	column-count: 1;
+	text-align: center;
+	clear: both;
+}
+li {
+	padding: 0px 0px 10px 0px;
+	margin-bottom: 0.6rem;
+}
+strong {
+	font-family: 'opensans-bold', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+li span {
+	display: block;
+	font-family: 'opensans-bold', sans-serif;
+	font-size: 16px;
+	word-wrap: break-word;
+}

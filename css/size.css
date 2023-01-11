@@ -1,0 +1,17 @@
+@media only screen and (max-width:1024px) {
+	.head span {
+		font-size: 40px;
+	}
+}
+
+@media only screen and (max-width:768px) {	
+	.head span {
+		font-size: 35px;
+	}
+}
+
+@media only screen and (max-width:480px) {
+	.head span {
+		font-size: 30px;
+	}
+}
