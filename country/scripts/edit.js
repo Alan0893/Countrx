@@ -1,7 +1,29 @@
 (async () => {
 	const query = (window.location.search).replace('?search=', '');
 	const response = await fetchRes(query);
-	const queryF = findQuery(query, response);
+
+	if(response.status == 404) {
+		const header = document.getElementById('header')
+		header.style.backgroundColor = 'rgb(209, 105, 105)'
+
+		const body = document.getElementById('info');
+		body.innerHTML = ''
+		document.body.style.backgroundColor = 'rgb(229, 152, 152)'
+
+		const div = document.createElement('div');
+		document.body.appendChild(div);
+		const h2 = document.createElement('h2');
+		div.appendChild(h2);
+		h2.innerText = 'Error 404'
+		const h3 = document.createElement('h3');
+		div.appendChild(h3);
+		h3.innerText = 'Whoops! This country could be found. Please check the spelling of the entered country. ' + 
+			'\n\nEntered Country: ' + query
+		console.log(query)
+	} else {
+		const queryF = findQuery(query, response);
+		edit(queryF);
+	}
 
 	/**
 	 * Capitalizes first letter of each word
@@ -12,6 +34,22 @@
 		return str.replace(/\w\S*/g, function (txt) {
 			return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 		});
+	}
+
+	/**
+	 * Joins str with the separator between the splits
+	 * @param {String} str 
+	 * @param {String} separator 
+	 * @returns a str joined by the separator
+	 */
+	function toJoin(str, separator, split) {
+		let arr = str.trim().split(split);
+		let output = "";
+		for(let i = 0; i < arr.length-1; i++) {
+			output += arr[i] + separator;
+		}
+		output += arr[arr.length-1];
+		return output;
 	}
 
 	/**
@@ -41,14 +79,6 @@
 			}
 		}
 		return response[0];
-	}
-
-	function status(response) {
-		if(response.status == 404) {
-			location.href = '../index.html'
-		} else {
-			return;
-		}
 	}
 
 	function edit(res) {
@@ -88,7 +118,10 @@
 		capital.innerText = res.capital
 
 		const capCoordinates = document.getElementById('capCoordinates');
-		capCoordinates.innerText = res.capitalInfo.latlng
+		if(res.capitalInfo.latlng != undefined)
+			capCoordinates.innerText = (res.capitalInfo.latlng + '').replace(',', ', ')
+		else 
+			capCoordinates.innerText = 'N/A'
 
 		const continents = document.getElementById('continents');
 		continents.innerText = res.continents
@@ -100,7 +133,7 @@
 		subregion.innerText = res.subregion
 
 		const coordinates = document.getElementById('coordinates');
-		coordinates.innerText = res.latlng
+		coordinates.innerText = (res.latlng + '').replace(',', ', ')
 
 		const borderCountries = document.getElementById('borderCountries');
 		if(res.borders != undefined)
@@ -120,16 +153,16 @@
 		const currencies = document.getElementById('currencies');
 		var currency = "";
 		for(var key in res.currencies) {
-			currency += key + ' (' + res.currencies[key].symbol + ')'
+			currency += key + ' (' + res.currencies[key].symbol + ') '
 		}
-		currencies.innerText = currency
+		currencies.innerText = toJoin(currency, '), ', ') ')
 
 		const languages = document.getElementById('languages');
 		var lang = "";
 		for(var key in res.languages) {
-			lang += res.languages[key]
+			lang += res.languages[key] + ' '
 		}
-		languages.innerText = lang
+		languages.innerText = toJoin(lang, ', ', ' ')
 
 		const population = document.getElementById('population');
 		population.innerText = (res.population).toLocaleString('en-us')
@@ -139,7 +172,10 @@
 		for(var key in res.gini) {
 			giniCo += res.gini[key] + ' (' + key + ')'
 		}
-		gini.innerText = giniCo
+		if(giniCo != "")
+			gini.innerText = giniCo
+		else 
+			gini.innerText = 'N/A'
 
 		const car = document.getElementById('car');
 		car.innerText = toCapitalize(res.car.side)
@@ -148,7 +184,10 @@
 		week.innerText = toCapitalize(res.startOfWeek)
 
 		const postal = document.getElementById('postal');
-		postal.innerText = res.postalCode.format
+		if(res.postalCode != undefined)
+			postal.innerText = res.postalCode.format
+		else 
+			postal.innerText = 'N/A'
 
 		const root = document.getElementById('root');
 		root.innerText = res.idd.root
@@ -159,7 +198,4 @@
 		const timezones = document.getElementById('timezones');
 		timezones.innerText = ((res.timezones) + '').replaceAll(',', '\n')
 	}
-
-	edit(queryF)
-
 })()
