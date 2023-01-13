@@ -4,6 +4,7 @@
    b. Heading
    c. Label
    d. Search Bar
+   e. Suggestions
 /*==================================================*/
 
 /* ------------------------------------------------------------------ */
@@ -83,4 +84,24 @@
 }
 #submit:hover {
 	cursor: pointer
+}
+
+/* ------------------------------------------------------------------ */
+/* e. Suggestions
+/* ------------------------------------------------------------------ */
+#s1, #s2, #s3 {
+	background-color: #eee;
+	border: none;
+	color: black;
+	padding: 5px 10px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 2px auto auto;
+	cursor: pointer;
+	border-radius: 16px;
+}
+#s1:hover,
+#s2:hover,
+#s3:hover {
+	background-image: linear-gradient(90deg, #9cffac, #9cffe0);
 }
