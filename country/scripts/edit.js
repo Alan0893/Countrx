@@ -18,9 +18,8 @@
 		const h3 = document.createElement('h3');
 		div.appendChild(h3);
 		h3.innerText = 'Whoops! This country could be found. Please check the spelling of the entered country. ' + 
-			'\n\nEntered Country: ' + query
-		console.log(query)
-	} else {
+			'\n\nEntered Country: ' + query;
+	} else {	
 		const queryF = findQuery(query, response);
 		edit(queryF);
 	}
@@ -58,6 +57,7 @@
 	 * @returns JSON body of response
 	 */
 	async function fetchRes(query) {
+		query = query.replaceAll('+', '%20')
 		const res = await fetch('https://restcountries.com/v3.1/name/' + query)
 		const body = await res.json();
 		return body;
@@ -70,7 +70,8 @@
 	 * @returns a country object in json format
 	 */
 	function findQuery(query, response) {
-		const toLowerQ = (query.replaceAll('%20', ' ')).toLowerCase();
+		let toLowerQ = (query.replaceAll('%20', ' ')).toLowerCase();
+		toLowerQ = toLowerQ.replaceAll('+', ' ')
 
 		for(let i = 0; i < response.length; i++) {
 			let resName = (response[i].name.common).toLowerCase();
@@ -82,7 +83,7 @@
 	}
 
 	function edit(res) {
-		document.title = "Countrx | " + res.name.official
+		document.title = "Countrx | " + res.name.common
 
 		const country = document.getElementById('country');
 		country.innerText = res.name.official + ' (' + res.cca3 + ')'
@@ -103,7 +104,7 @@
 		independent.innerText = toCapitalize('' + res.independent)
 
 		const tld = document.getElementById('tld');
-		tld.innerText = res.tld
+		tld.innerText = (res.tld + '').replaceAll(',', ', ')
 
 		const cca2 = document.getElementById('cca2');
 		cca2.innerText = res.cca2;
@@ -137,7 +138,7 @@
 
 		const borderCountries = document.getElementById('borderCountries');
 		if(res.borders != undefined)
-			borderCountries.innerText = res.borders
+			borderCountries.innerText = (res.borders + '').replaceAll(',', ', ')
 		else 
 			borderCountries.innerText = "None"
 

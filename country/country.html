@@ -3,7 +3,7 @@
 	<head>
 		<!--BASICS
 		---------------------------------->
-		<title>Countrx | USA</title>
+		<title>Countrx | ---</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<!--META
@@ -15,8 +15,22 @@
 		<link rel="stylesheet" href="/country/css/default.css">
 		<link rel="stylesheet" href="/country/css/layout.css">
 		<link rel="stylesheet" href="/country/css/size.css">
+		<!--ON LOAD SCRIPT
+		---------------------------------->
+		<script type="text/javascript">
+			document.onreadystatechange = function () {
+				if (document.readyState !== "complete") {
+					document.querySelector("body").style.visibility = "hidden";
+					document.getElementById("loader").style.visibility = "visible";
+				} else {
+					document.querySelector("body").style.visibility = "visible";
+					document.getElementById("loader").style.visibility = "hidden"
+				}
+			};
+		</script>
 	</head>
 	<body>
+		<div id="loader">Loading...</div>
 		<!--HEADER 
 		---------------------------------->
 		<header id="header">
@@ -46,7 +60,7 @@
 		</header> <!-- END OF HEADER -->
 
 		<div id="info">
-			<h2 id="country">United States of America (USA)</h2>
+			<h2 id="country">...</h2>
 			<!--STATUS INFO
 			---------------------------------->
 			<div class="col-four size-full">
@@ -56,15 +70,15 @@
 					<ul class="list">
 						<li>
 							<strong>Status</strong>
-							<span id="status">Officially Assigned</span>
+							<span id="status">...</span>
 						</li>
 						<li>
 							<strong>UN Member</strong>
-							<span id="unMember">True</span>
+							<span id="unMember">...</span>
 						</li>
 						<li>
 							<strong>Independent</strong>
-							<span id="independent">True</span>
+							<span id="independent">...</span>
 						</li>
 						<li>
 							<strong>Top-Level Domain</strong>
@@ -72,11 +86,11 @@
 						</li>
 						<li>
 							<strong>ISO Code (cca2)</strong>
-							<span id="cca2">US</span>
+							<span id="cca2">...</span>
 						</li>
 						<li>
 							<strong>ISO Code (ccn3)</strong>
-							<span id="ccn3">840</span>
+							<span id="ccn3">...</span>
 						</li>
 					</ul>
 				</div>
@@ -93,35 +107,35 @@
 					<ul class="list">
 						<li>
 							<strong>Capital</strong>
-							<span id="capital">Washington, D.C.</span>
+							<span id="capital">...</span>
 						</li>
 						<li>
 							<strong>Capital Coordinates</strong>
-							<span id="capCoordinates">38.89, -77.05</span>
+							<span id="capCoordinates">...</span>
 						</li>
 						<li>
 							<strong>Continents</strong>
-							<span id="continents">North America</span>
+							<span id="continents">....</span>
 						</li>
 						<li>
 							<strong>Region</strong>
-							<span id="region">Americas</span>
+							<span id="region">...</span>
 						</li>
 						<li>
 							<strong>Subregion</strong>
-							<span id="subregion">North America</span>
+							<span id="subregion">...</span>
 						</li>
 						<li>
 							<strong>Coordinates</strong>
-							<span id="coordinates">38.0, -97.0</span>
+							<span id="coordinates">...</span>
 						</li>
 						<li>
 							<strong>Bordering Countries</strong>
-							<span id="borderCountries">CAN, MEX</span>
+							<span id="borderCountries">...</span>
 						</li>
 						<li>
 							<strong>Area</strong>
-							<span id="area">9,372,610.0 sq kilometers</span>
+							<span id="area">...</span>
 						</li>
 					</ul>
 				</div>
