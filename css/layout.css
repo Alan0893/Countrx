@@ -100,8 +100,6 @@
 	cursor: pointer;
 	border-radius: 16px;
 }
-#s1:hover,
-#s2:hover,
-#s3:hover {
+#s1:hover, #s2:hover, #s3:hover {
 	background-image: linear-gradient(90deg, #9cffac, #9cffe0);
 }

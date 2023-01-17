@@ -4,6 +4,8 @@
    b. Heading
    c. Search Bar
    d. Box
+   e. Section
+   f. Footer
 /*==================================================*/
 
 /* ------------------------------------------------------------------ */
@@ -13,6 +15,10 @@
 	0%, 80% {
 		transform: rotateY(360deg)
 	}
+}
+@keyframes left-to-right {
+	0% { transform: translateX(-100%) }
+	100% { transform: translateX(100%) }
 }
 
 /* ------------------------------------------------------------------ */
@@ -84,14 +90,13 @@ header {
 }
 
 /* ------------------------------------------------------------------ */
-/* c. Section
+/* e. Section
 /* ------------------------------------------------------------------ */
 #info {
 	height: 100%;
 	max-height: 100%;
 	background-color: rgb(152, 229, 203);
 }
-
 #coatOfArms {
 	display: block;
 	margin-left: auto;
@@ -118,7 +123,6 @@ header {
 /* ------------------------------------------------------------------ */
 #loader {
 	color: grey;
-	font-family: Arial, Helvetica, sans-serif;
 	box-sizing: content-box;
 	font-size: 16px;
 	height: 5vh;
@@ -157,7 +161,66 @@ header {
 	right: 0;
 	top: 0;
 }
-@keyframes left-to-right {
-	0% { transform: translateX(-100%) }
-	100% { transform: translateX(100%) }
+
+/* ------------------------------------------------------------------ */
+/* e. Footer
+/* ------------------------------------------------------------------ */
+.footer {
+	background-color: rgb(105, 209, 174);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 45px 50px;
 }
+.footer .footer-left p {
+	color: #1b1c1c;
+	font-size: 14px;
+	margin: 0;
+}
+.footer p.footer-links {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	margin: 0 0 10px;
+	padding: 0;
+}
+.footer p.footer-links a {
+	text-decoration: none;
+	color: inherit;
+}
+.footer .footer-links a:before {
+	content: "·";
+	font-size: 20px;
+	left: 0;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	padding-right: 5px;
+}
+.footer .footer-links .link-1:before {
+	content: none;
+}
+.footer .footer-right {
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+.footer .footer-right a {
+	display: inline-grid;
+	width: 35px;
+	height: 35px;
+	background-color: rgb(76, 139, 118);
+	border-radius: 10px;
+	font-size: 20px;
+	color: #ffffff;
+	place-items: center;
+	text-decoration: none;
+}
+.footer .footer-right a:hover {
+	background-color: rgb(76, 139, 118, 0.7);
+	width: 38px;
+	height: 38px;
+}
+.footer p.footer-links a:hover {
+	text-decoration: underline;
+}
+
