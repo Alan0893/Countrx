@@ -1,0 +1,35 @@
+body {
+	background-color: rgb(152, 229, 203);
+}
+
+/* ------------------------------------------------------------------ */
+/* b. Heading
+/* ------------------------------------------------------------------ */
+header {
+	background-color: rgb(105, 209, 174);
+	height: 50px;
+	text-align: center;
+}
+.head {
+	position: relative;
+	font-size: 0%;
+}
+.head a span {
+	position: relative;
+	display: inline-block;
+	font-size: 35px;
+	color: #fff;
+	text-transform: uppercase;
+	animation: flip 3s infinite;
+	animation-delay: calc(.3s * var(--i))
+}
+
+.container {
+	text-align: center;
+}
+h3 {
+	margin-top: 20px;
+}
+p {
+	margin-top: 10px;
+}
