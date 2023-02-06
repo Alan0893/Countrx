@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*==================================================
    TOC:
    a. General Styles 
@@ -139,4 +140,147 @@ header {
 }
 .footer p.footer-links a:hover {
 	text-decoration: underline;
+=======
+/*==================================================
+   TOC:
+   a. General Styles 
+   b. Header
+   c. Typography
+/*==================================================*/
+
+/* ------------------------------------------------------------------ */
+/* a. General Styles
+/* ------------------------------------------------------------------ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	overflow-y: inherit;
+}
+body {
+	background-color: rgb(152, 229, 203);
+}
+h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+p {
+	margin-top: 10px;
+}
+a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+/* ------------------------------------------------------------------ */
+/* b. Header
+/* ------------------------------------------------------------------ */
+@keyframes flip {
+	0%, 80% {
+		transform: rotateY(360deg)
+	}
+}
+header {
+	background-color: rgb(105, 209, 174);
+	height: 50px;
+	text-align: center;
+}
+.head {
+	position: relative;
+	font-size: 0%;
+}
+.head a span {
+	position: relative;
+	display: inline-block;
+	font-size: 35px;
+	color: #fff;
+	text-transform: uppercase;
+	animation: flip 3s infinite;
+	animation-delay: calc(.3s * var(--i))
+}
+
+/* ------------------------------------------------------------------ */
+/* c. Container
+/* ------------------------------------------------------------------ */
+.container {
+	text-align: center;
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 100%;
+	max-height: 100%;
+	background-color: rgb(152, 229, 203);
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Sections
+/* ------------------------------------------------------------------ */
+.desc, .api, .language {
+	margin-bottom: 15px;
+}
+
+/* ------------------------------------------------------------------ */
+/* e. Footer
+/* ------------------------------------------------------------------ */
+.footer {
+	background-color: rgb(105, 209, 174);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	padding: 45px 50px;
+	position:absolute;
+	bottom: 0;
+}
+.footer .footer-left p {
+	color: #1b1c1c;
+	font-size: 14px;
+	margin: 0;
+}
+.footer p.footer-links {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	margin: 0 0 10px;
+	padding: 0;
+}
+.footer p.footer-links a {
+	text-decoration: none;
+	color: inherit;
+}
+.footer .footer-links a:before {
+	content: "·";
+	font-size: 20px;
+	left: 0;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	padding-right: 5px;
+}
+.footer .footer-links .link-1:before {
+	content: none;
+}
+.footer .footer-right {
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+.footer .footer-right a {
+	display: inline-grid;
+	width: 35px;
+	height: 35px;
+	background-color: rgb(76, 139, 118);
+	border-radius: 10px;
+	font-size: 20px;
+	color: #ffffff;
+	place-items: center;
+	text-decoration: none;
+}
+.footer .footer-right a:hover {
+	background-color: rgb(76, 139, 118, 0.7);
+	width: 38px;
+	height: 38px;
+}
+.footer p.footer-links a:hover {
+	text-decoration: underline;
+>>>>>>> d35e7aea7ea1c196eca1086e6876b0e40d8dc1d6
 }
