@@ -19,6 +19,13 @@
 		div.appendChild(h3);
 		h3.innerText = 'Whoops! This country could be found. Please check the spelling of the entered country. ' + 
 			'\n\nEntered Country: ' + query;
+
+		const footer = document.getElementById('footer')
+		let parentDiv = footer.parentNode;
+		parentDiv.insertBefore(div, footer)
+		footer.innerHTML = ''
+		footer.style.backgroundColor = 'rgb(229, 152, 152)'
+		
 	} else {	
 		const queryF = findQuery(query, response);
 		edit(queryF);
