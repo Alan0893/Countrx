@@ -120,7 +120,7 @@
 		ccn3.innerText = res.ccn3
 
 		const maps = document.getElementById('maps');
-		maps.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyATAfX_upUrGOhhG7NKPT2mv-0Rap-oWj8&q=" + (res.name.common)
+		maps.src = "https://www.google.com/maps/embed/v1/place?key=" + process.env.API_KEY + "&q=" + (res.name.common)
 
 		const capital = document.getElementById('capital');
 		capital.innerText = res.capital
